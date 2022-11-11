@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author johab
+ *
+ */
+module Bank {
+}
