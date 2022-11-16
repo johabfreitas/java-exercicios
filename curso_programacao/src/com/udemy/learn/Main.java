@@ -10,6 +10,7 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
+		/*
 		int numero = sc.nextInt();
 		int soma = 0;
 		while(numero != 0) {
@@ -17,9 +18,22 @@ public class Main {
 			numero = sc.nextInt();			
 		}
 		System.out.println(soma);
+	
 		
+		for(int numero = 1; numero <= 5; numero++) {
+			if(numero == 10)
+				//break;
+			continue;
+			
+			System.out.println(numero);
+		}
+		*/
+		System.out.println(30 / 0);
 		sc.close();
+	    }
+        
+		
 
 	}
 
-}
+
