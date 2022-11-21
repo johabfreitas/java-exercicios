@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_negativos"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_soma_media"/>
+	<classpathentry kind="src" path="src_exercicio_vetores_alturas"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
