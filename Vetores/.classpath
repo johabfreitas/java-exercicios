@@ -14,5 +14,6 @@
 	<classpathentry kind="src" path="src_exercicio_vetores_somavetores"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_abaixodamedia"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_mediapares"/>
+	<classpathentry kind="src" path="src_exercicio_vetores_maisvelho"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
