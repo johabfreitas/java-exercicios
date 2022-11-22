@@ -12,5 +12,6 @@
 	<classpathentry kind="src" path="src_exercicio_vetores_numerospares"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_maiorposicao"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_somavetores"/>
+	<classpathentry kind="src" path="src_exercicio_vetores_abaixodamedia"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
