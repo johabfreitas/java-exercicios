@@ -38,6 +38,7 @@ public class Alturas {
 				qtdMenor++;
 			}
 			percentual = ((double)qtdMenor / n) * 100;
+			// percentual = qtdMenor * 100.0 / n;
 		}
 		
 		System.out.println(String.format("Altura media: %.2f", sum / altura.length));
