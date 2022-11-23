@@ -9,7 +9,7 @@ public class DadosPessoais {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		int count1 = 1, count2 = 1, contador = 0, contadorHomem = 0;
+		int count1 = 1, count2 = 1, qtdMulheres = 0, qtdHomens = 0;
 		System.out.print("Quantas pessoas serao digitadas? ");
 		int n = sc.nextInt();
 		double[] altura = new double[n];
@@ -44,20 +44,20 @@ public class DadosPessoais {
 		  for (int i = 0; i < n; i++) {
 	        if(genero[i] == 'F') {
 	            soma += altura[i];
-	            contador++;
+	            qtdMulheres++;
 	        }
 	    } 
-		  media = soma / contador;
+		  media = soma / qtdMulheres;
 		  System.out.println(String.format("Media das alturas das mulheres = %.2f", media));
 		  
 		  // Quantidade de homens
 		  for (int i = 0; i < n; i++) {
 		        if(genero[i] == 'M') {
-		            contadorHomem++;
+		            qtdHomens++;
 		        }
 		    }
 		  
-		  System.out.println(String.format("Numero de homens = %d", contadorHomem));
+		  System.out.println(String.format("Numero de homens = %d", qtdHomens));
 		
 		sc.close();
 
