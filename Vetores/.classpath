@@ -16,5 +16,6 @@
 	<classpathentry kind="src" path="src_exercicio_vetores_mediapares"/>
 	<classpathentry kind="src" path="src_exercicio_vetores_maisvelho"/>
 	<classpathentry kind="src" path="src_exercicios_vetores_aprovados"/>
+	<classpathentry kind="src" path="src_exercicios_vetores_dadospessoais"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
