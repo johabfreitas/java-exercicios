@@ -10,80 +10,94 @@ import entities.Employees;
 public class AppEmployees {
 
 	public static void main(String[] args) {
+
 		Locale.setDefault(Locale.US);
-		Scanner sc = new Scanner(System.in);	
-		int count  = 1;
-		
-		Employees employees = new Employees();
-		List<Integer> idList = new ArrayList<>();
-		List<String> nameList = new ArrayList<>();
-		List<Double> salaryList = new ArrayList<>();
-		
+		Scanner sc = new Scanner(System.in);
+
+		@SuppressWarnings("rawtypes")
+		List<Employees> list = new ArrayList<>();
+
 		System.out.print("How many employees will be registered? ");
 		int n = sc.nextInt();
-		Employees[] vect = new Employees[n];
-		
+
 		for (int i = 0; i < n; i++) {
+
 			System.out.println();
-			System.out.println("Employee #" + count++ + ":");
-			
+			System.out.println("Employee #" + (i + 1) + ":");
+
 			System.out.print("Id: ");
 			Integer id = sc.nextInt();
-			employees.setId(id);
-			idList.add(id);
+			while(hasId(list, id)) {
+				System.out.print("Id already taken! Try again: ");
+				id = sc.nextInt();
+			}
 			
 			System.out.print("Name: ");
 			sc.nextLine();
 			String name = sc.nextLine();
-			employees.setName(name);
-			nameList.add(name);
-			
+
 			System.out.print("Salary: ");
-			employees.salary = sc.nextDouble();
-			salaryList.add(employees.salary);
-			
-			vect[i] = new Employees(id, name, employees.salary);
-		}		
-		
+			Double salary = sc.nextDouble();
+
+			@SuppressWarnings("rawtypes")
+			Employees emp = new Employees(id, name, salary);
+
+			list.add(emp);
+		}
+
 		System.out.println();
 		System.out.print("Enter the employee id that will have salary increase: ");
-		Integer searchId = sc.nextInt();
-		System.out.print("Enter the percentage: ");
-		double p = sc.nextDouble();
-		employees.increaseSalary(p);
+		int idsalary = sc.nextInt();
+		//Integer pos = position(list, idsalary);
+		Employees emp = list.stream().filter(x -> x.getId() == idsalary).findFirst().orElse(null);
+		if(emp == null) {
+			System.out.println("This id does not exist!");
+		} else {
+			System.out.print("Enter the percentage: ");
+			double percent = sc.nextDouble();
+			//list.get(pos).increaseSalary(percent);
+			emp.increaseSalary(percent);
+		}
 		
 		System.out.println();
 		System.out.println("List of employees:");
-		//employees = new Employees(employees.id, employees.name, employees.salary);
-		//System.out.println(employees);
-		
+		for(@SuppressWarnings("rawtypes") Employees e : list) {
+			System.out.println(e);
+		}
 		
 		/*
-		for (int i = 0; i < n; i++) {
-			if (vect[i] != null) {
-				System.out.println(vect[i]);
-			}
-		}
-	
-		
-		for(Integer x : idList){
-			System.out.println(x);
-		}
-	
-		for(String y : nameList){
-			System.out.println(y);
+		@SuppressWarnings("rawtypes")
+		Employees emp = list.stream().filter(x -> x.getId() == idsalary).findFirst().orElse(null);
+		if (emp == null) {
+			System.out.println("This id does not exist!");
+		} else {
+			System.out.print("Enter the percentage: ");
+			double percent = sc.nextDouble();
+			emp.increaseSalary(percent);
 		}
 		
-		for(Double z : salaryList){
-			System.out.printf("%.2f\n", z);
+		System.out.println();
+		System.out.println("List of employees:");
+		for(@SuppressWarnings("rawtypes") Employees emp : list) {
+			System.out.println(emp);
 		}
-		*/
-		
-		
-		
-		
+		 */
 		sc.close();
 
+	}
+	
+	static Integer position(@SuppressWarnings("rawtypes") List<Employees> list, int id) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		return null;
+	}
+	
+	public static boolean hasId(List<Employees> list, int id) {
+		Employees emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		return emp != null;
 	}
 
 }

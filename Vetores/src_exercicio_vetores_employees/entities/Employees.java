@@ -1,10 +1,10 @@
 package entities;
 
-public class Employees {
+public class Employees<T> {
 
-	public Integer id;
-	public String name;
-	public Double salary;
+	private Integer id;
+	private  String name;
+	private Double salary;
 	
 	public Employees() {
 	}
@@ -36,7 +36,7 @@ public class Employees {
 	}
 	
 	public void increaseSalary(double percentage) {
-		salary += salary * percentage / 100;
+		salary += salary * percentage / 100.0;
 	}
 	
 	public String toString() {
