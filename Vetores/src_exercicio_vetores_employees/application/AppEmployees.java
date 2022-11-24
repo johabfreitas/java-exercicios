@@ -8,13 +8,13 @@ import java.util.Scanner;
 import entities.Employees;
 
 public class AppEmployees {
-
+	
+	@SuppressWarnings("rawtypes") //Indica que os avisos do compilador nomeado devem ser suprimidos no elemento anotado (e em todos os elementos do programa contidos no elemento anotado).
 	public static void main(String[] args) {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		@SuppressWarnings("rawtypes")
 		List<Employees> list = new ArrayList<>();
 
 		System.out.print("How many employees will be registered? ");
@@ -39,7 +39,6 @@ public class AppEmployees {
 			System.out.print("Salary: ");
 			Double salary = sc.nextDouble();
 
-			@SuppressWarnings("rawtypes")
 			Employees emp = new Employees(id, name, salary);
 
 			list.add(emp);
@@ -61,7 +60,7 @@ public class AppEmployees {
 		
 		System.out.println();
 		System.out.println("List of employees:");
-		for(@SuppressWarnings("rawtypes") Employees e : list) {
+		for(Employees e : list) {
 			System.out.println(e);
 		}
 		
@@ -86,7 +85,8 @@ public class AppEmployees {
 
 	}
 	
-	static Integer position(@SuppressWarnings("rawtypes") List<Employees> list, int id) {
+	@SuppressWarnings("rawtypes") 
+	static Integer position(List<Employees> list, int id) {
 		for(int i = 0; i < list.size(); i++) {
 			if(list.get(i).getId() == id) {
 				return i;
@@ -95,6 +95,7 @@ public class AppEmployees {
 		return null;
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public static boolean hasId(List<Employees> list, int id) {
 		Employees emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
 		return emp != null;
