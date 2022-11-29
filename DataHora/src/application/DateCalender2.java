@@ -19,6 +19,8 @@ public class DateCalender2 {
 		cal.add(Calendar.HOUR_OF_DAY, 4);
 		d = cal.getTime();
 		
+		System.out.println();
+		
 		System.out.println(sdf.format(d));
 
 	}
