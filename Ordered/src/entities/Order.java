@@ -79,7 +79,6 @@ public class Order {
 		sb.append("Client: " + client.getName() + " " + sdf.format(client.getBirthDate()) + " - " + client.getEmail() + "\n");
 		sb.append("Order items:\n");
 		
-		
 		return sb.toString();
 	}
 

@@ -9,7 +9,6 @@ public class Product {
 	}
 
 	public Product(String name, Double price) {
-		super();
 		this.name = name;
 		this.price = price;
 	}
@@ -30,4 +29,7 @@ public class Product {
 		this.price = price;
 	}
 
+	public String toString() {
+		return name + " " +price;
+	}
 }

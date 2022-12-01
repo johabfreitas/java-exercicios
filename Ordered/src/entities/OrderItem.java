@@ -45,7 +45,7 @@ public class OrderItem {
 	public double subTotal() {
 		double sum = 0;
 		for(Product p : product) {
-			sum += quantity * p.getPrice();
+			sum += getQuantity() * p.getPrice();
 		}
 		return sum;
 	}
