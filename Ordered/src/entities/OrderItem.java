@@ -43,7 +43,11 @@ public class OrderItem {
 	}
 	
 	public double subTotal() {
-		return quantity * price;
+		double sum = 0;
+		for(Product p : product) {
+			sum += quantity * p.getPrice();
+		}
+		return sum;
 	}
 
 }
