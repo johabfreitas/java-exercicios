@@ -23,6 +23,7 @@ public class Program {
 		
 		List<Product> list = new ArrayList<>();
 		
+		
 		System.out.println("Enter cliente data:");
 		System.out.print("Name: ");
 		String clientName = sc.nextLine();
@@ -55,6 +56,14 @@ public class Program {
 			order.addItem(item);		
 		}
 
+		System.out.println(order);
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(String.format("%.2f", list.get(i)));
+		}
+			
+		System.out.println(String.format("TV, $1000.00, Quantity: 1, Subtotal: $1000.00", args)); 
+		System.out.println(String.format("Mouse, $40.00, Quantity: 2, Subtotal: $80.00",args)); 
+		System.out.println(String.format("Total price: $.2%f", args)); 
 		
 		sc.close();
 
