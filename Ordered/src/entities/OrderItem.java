@@ -44,10 +44,12 @@ public class OrderItem {
 	
 	public double subTotal() {
 		double sum = 0;
-		for(Product p : product) {
-			sum += getQuantity() * p.getPrice();
-		}
+		sum += quantity * price;
 		return sum;
+	}
+	
+	public String toString() {
+		return quantity + " " + price;
 	}
 
 }

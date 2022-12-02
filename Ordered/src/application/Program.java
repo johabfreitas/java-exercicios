@@ -43,8 +43,7 @@ public class Program {
 		for(int i = 1; i <= n; i++) {
 			System.out.println("Enter #" + i +" item data:" );
 			System.out.print("Product name: ");
-			String name = sc.nextLine();
-			sc.nextLine();
+			String name = sc.next();
 			System.out.print("Product price: ");
 			double price = sc.nextDouble();
 			System.out.print("Quantity: ");
@@ -53,19 +52,26 @@ public class Program {
 			Product product =  new Product(name, price);
 			listProduct.add(product);
 			OrderItem item = new OrderItem(quantity, price);
-			order.addItem(item);		
+			listItem.add(item);
 		}
 		
 		System.out.println();
 		System.out.println(order);
-		for(int i = 0; i < listProduct.size(); i++) {
-			System.out.println(String.format("%.2f", listProduct.get(i)));
-		}
-			
-		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", args)); 
-		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", args)); 
-		System.out.println(String.format("Total price: $.2%f", args)); 
 		
+		for(int i = 0; i < listProduct.size(); i++) {
+			System.out.println(listProduct.get(i));
+		}
+		
+		System.out.println();
+		for(int i = 0; i < listItem.size(); i++) {
+			System.out.println(listItem.get(i).subTotal());
+		}
+
+			/*
+		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", name, price, quantity, null)); 
+		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", name, price, quantity, null)); 
+		System.out.println(String.format("Total price: $.2%f", null)); 
+		*/
 		sc.close();
 
 	}
