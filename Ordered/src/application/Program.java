@@ -61,8 +61,8 @@ public class Program {
 			System.out.println(String.format("%.2f", list.get(i)));
 		}
 			
-		System.out.println(String.format("TV, $1000.00, Quantity: 1, Subtotal: $1000.00", args)); 
-		System.out.println(String.format("Mouse, $40.00, Quantity: 2, Subtotal: $80.00",args)); 
+		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", args)); 
+		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", args)); 
 		System.out.println(String.format("Total price: $.2%f", args)); 
 		
 		sc.close();
