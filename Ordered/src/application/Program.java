@@ -59,17 +59,20 @@ public class Program {
 		System.out.println(order);
 		
 		for(int i = 0; i < listProduct.size(); i++) {
-			System.out.println(listProduct.get(i));
+			System.out.println(listProduct.get(i).getName());
 		}
 		
-		System.out.println();
+		double sum = 0;
 		for(int i = 0; i < listItem.size(); i++) {
-			System.out.println(listItem.get(i).subTotal());
+			sum += listItem.get(i).subTotal();			
 		}
+		
+		
+		System.out.println(String.format("Total price: $%.2f", sum));
 
 			/*
-		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", name, price, quantity, null)); 
-		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", name, price, quantity, null)); 
+		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $%.2f", name, price, quantity, null)); 
+		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $%.2f", name, price, quantity, null)); 
 		System.out.println(String.format("Total price: $.2%f", null)); 
 		*/
 		sc.close();
