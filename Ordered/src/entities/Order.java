@@ -77,7 +77,7 @@ public class Order {
 		sb.append("Order moment: " + sdf1.format(moment) + "\n");
 		sb.append("Order status: " + order + "\n");
 		sb.append("Client: " + client.getName() + " " + sdf.format(client.getBirthDate()) + " - " + client.getEmail() + "\n");
-		sb.append("Order items:\n");
+		sb.append("Order items:");
 		
 		return sb.toString();
 	}
