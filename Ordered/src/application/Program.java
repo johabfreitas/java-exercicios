@@ -21,8 +21,8 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
-		List<Product> list = new ArrayList<>();
-		
+		List<Product> listProduct = new ArrayList<>();
+		List<OrderItem> listItem = new ArrayList<>();
 		
 		System.out.println("Enter cliente data:");
 		System.out.print("Name: ");
@@ -51,14 +51,15 @@ public class Program {
 			int quantity = sc.nextInt();
 			
 			Product product =  new Product(name, price);
-			list.add(product);
+			listProduct.add(product);
 			OrderItem item = new OrderItem(quantity, price);
 			order.addItem(item);		
 		}
-
+		
+		System.out.println();
 		System.out.println(order);
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(String.format("%.2f", list.get(i)));
+		for(int i = 0; i < listProduct.size(); i++) {
+			System.out.println(String.format("%.2f", listProduct.get(i)));
 		}
 			
 		System.out.println(String.format("%s, $.2%f, Quantity: %d, Subtotal: $.2%f", args)); 
