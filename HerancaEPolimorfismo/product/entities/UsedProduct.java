@@ -5,13 +5,9 @@ import java.util.Date;
 
 public class UsedProduct extends Product{
 	
-	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private Date manufactureDate;
-	
-	public UsedProduct() {
-		super();
-	}
 
 	public UsedProduct(String name, Double price, Date manufactureDate) {
 		super(name, price);
@@ -33,10 +29,5 @@ public class UsedProduct extends Product{
 				+ String.format("%.2f", getPrice()) 
 				+ " (Manufacture date: " + sdf.format(manufactureDate) + ")";
 	}
-	
-	public String toString() {
-		return priceTag();
-	}
-	
 	
 }

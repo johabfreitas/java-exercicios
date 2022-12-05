@@ -4,10 +4,6 @@ public class ImportedProduct extends Product {
 
 	private Double customsFree;
 
-	public ImportedProduct() {
-		super();
-	}
-
 	public ImportedProduct(String name, Double price, Double customsFree) {
 		super(name, price);
 		this.customsFree = customsFree;
@@ -33,8 +29,4 @@ public class ImportedProduct extends Product {
 				+ String.format(" (Customs fee: $ %.2f)", getCustomsFree());
 	}
 	
-	public String toString() {
-		return priceTag();
-	}
-
 }

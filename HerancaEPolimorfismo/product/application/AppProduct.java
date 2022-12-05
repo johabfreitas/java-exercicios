@@ -54,7 +54,7 @@ public class AppProduct {
 		System.out.println();
 		System.out.println("PRICE TAGS:");
 		for(Product prod : list) {
-			System.out.println(prod.toString());
+			System.out.println(prod.priceTag());
 		}
 		
 		
