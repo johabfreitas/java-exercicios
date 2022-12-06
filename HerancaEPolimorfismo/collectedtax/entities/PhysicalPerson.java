@@ -4,9 +4,10 @@ public class PhysicalPerson {
 
 	private String name;
 	private Double annualIncome;
-	private Double healtExpenses;
+	protected Double healtExpenses;
 
 	public PhysicalPerson() {
+		super();
 	}
 
 	public PhysicalPerson(String name, Double annualIncome, Double healtExpenses) {

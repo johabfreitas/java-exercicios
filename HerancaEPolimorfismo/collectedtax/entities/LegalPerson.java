@@ -5,7 +5,7 @@ public class LegalPerson extends PhysicalPerson {
 	private Integer numberEmployee;
 
 	public LegalPerson(String name, Double annualIncome, Double healtExpenses, Integer numberEmployee) {
-		super(name, annualIncome, healtExpenses);
+		super(name, annualIncome, healtExpenses = 0.0);
 		this.numberEmployee = numberEmployee;
 	}
 
