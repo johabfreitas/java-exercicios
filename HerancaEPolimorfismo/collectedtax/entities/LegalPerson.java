@@ -17,4 +17,16 @@ public class LegalPerson extends PhysicalPerson {
 		this.numberEmployee = numberEmployee;
 	}
 
+	@Override
+	public double taxCalculation() {
+		double tax = 0.0;
+		if (numberEmployee > 10) {
+			tax = getAnnualIncome() * 0.14;
+		} else {
+			tax = getAnnualIncome() * 0.16;
+		}
+
+		return tax;
+	}
+
 }

@@ -40,4 +40,16 @@ public class PhysicalPerson {
 		this.healtExpenses = healtExpenses;
 	}
 
+	public double taxCalculation() {
+		double tax = 0.0;
+		if (annualIncome < 20000.00) {
+			tax = (getAnnualIncome() * 0.15) - (getHealtExpenses() * 0.50);
+		} 
+		else if(annualIncome > 20000.00){
+			tax = (getAnnualIncome() * 0.25) - (getHealtExpenses() * 0.50);
+		}
+
+		return tax;
+	}
+
 }
