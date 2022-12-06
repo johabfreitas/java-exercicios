@@ -8,6 +8,8 @@ import java.util.Scanner;
 import entities.LegalPerson;
 import entities.PhysicalPerson;
 
+// Correção no repositório: https://github.com/acenelio/inheritance8-java
+
 public class Apptax {
 
 	public static void main(String[] args) {
