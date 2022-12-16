@@ -1,3 +1,8 @@
+/*
+ *  A correção deste exercício foi feita em uma live no Youtube:
+ *	https://www.youtube.com/watch?v=AiIuJqJ0r8A
+ */
+
 package application;
 
 import java.util.InputMismatchException;
