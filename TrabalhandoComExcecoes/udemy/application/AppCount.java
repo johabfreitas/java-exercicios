@@ -6,6 +6,7 @@
 
 package application;
 
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,29 +19,37 @@ public class AppCount {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter accout data");
-		System.out.print("Number: ");
-		int number = sc.nextInt();
-		System.out.print("Holder: ");
-		String holder = sc.nextLine();
-		sc.nextLine();
-		System.out.print("Initial balance: ");
-		double balance = sc.nextDouble();
-		System.out.print("Withdraw limit: ");
-		double withdrawLimit = sc.nextDouble();
-		System.out.println();
-
-		AccountBanck count = new AccountBanck(number, holder, balance, withdrawLimit);
-
-		System.out.print("Enter amount for withdraw: ");
-		double amount = sc.nextDouble();
-
 		try {
-			count.withdraw(amount);
-			System.out.printf("New balance: %.2f", count.getBalance());
-		} catch (BusinessException e) {
-			System.out.println(e.getMessage());
+
+			System.out.println("Enter accout data");
+			System.out.print("Number: ");
+			int number = sc.nextInt();
+			System.out.print("Holder: ");
+			String holder = sc.nextLine();
+			sc.nextLine();
+			System.out.print("Initial balance: ");
+			double balance = sc.nextDouble();
+			System.out.print("Withdraw limit: ");
+			double withdrawLimit = sc.nextDouble();
+			System.out.println();
+
+			AccountBanck count = new AccountBanck(number, holder, balance, withdrawLimit);
+
+			System.out.print("Enter amount for withdraw: ");
+			double amount = sc.nextDouble();
+
+			try {
+				count.withdraw(amount);
+				System.out.printf("New balance: %.2f", count.getBalance());
+			} catch (BusinessException e) {
+				System.out.println(e.getMessage());
+			}
+
+		} catch (InputMismatchException e) {
+			System.out.println("Operação ivalida!");
+
 		}
+
 		sc.close();
 
 	}
